@@ -103,4 +103,31 @@
   animation-fill-mode: forwards;
 }
 
+@media screen and (max-width: 470px){
+  .new-user{
+    width: calc(100% + 40px);
+    .content{
+      width: calc(100vw - 40px);
+      padding: 20px;
+    }
+  }
+  .new-user-active {
+    display: flex;
+    animation-name: tabOpeningAnimationSmallDevice;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes tabOpeningAnimationSmallDevice {
+    0% {
+      left: 100%;
+    }
+    25% {
+      left: 0;
+    }
+    100% {
+      left: -40px;
+    }
+  }
+}
+
 

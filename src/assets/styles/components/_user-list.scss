@@ -143,3 +143,27 @@
     background: #ccc !important;
   }
 }
+
+
+@media screen and (max-width: 768px){
+  .list{
+    &__item{
+      &--user{
+        margin-bottom: 20px;
+      }
+      &--action{
+        margin-bottom: 20px;
+      }
+      &--features{
+        padding-left: 0;
+        .details{
+          display: block;
+          label{
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+

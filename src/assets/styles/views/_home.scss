@@ -19,7 +19,7 @@
       padding-bottom: 20px;
 
       a {
-        flex-grow: 1;
+        width: 50%;
         text-align: center;
         text-decoration: none;
         font: 500 18px "Fira";
@@ -53,3 +53,27 @@
     }
   }
 }
+
+@media screen and (max-width: 1263px){
+  .home {
+    .main {
+      width: calc(100% - 100px);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 768px){
+  .home {
+    .main {
+      &__header{
+        flex-wrap: wrap;
+        a{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
