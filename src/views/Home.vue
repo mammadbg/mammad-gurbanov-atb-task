@@ -1,18 +1,53 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="global-container">
+    <div class="home">
+      <div class="main">
+        <div class="main__header">
+          <a
+            @click="selectedComponent = 'users'"
+            :class="{ 'link-active': (selectedComponent == 'users') }"
+            >İstifadəçilər</a
+          >
+          <a @click="selectedComponent = 'limits'"
+            :class="{ 'link-active': (selectedComponent == 'limits') }"
+          >Limitlər</a>
+        </div>
+        <div class="main__body">
+          <component :is="selectedComponent"></component>
+        </div>
+      </div>
+      <div class="button-container">
+        <button class="button__purple--filled" @click="newUserTabActive = true">
+          <i>+</i>
+          Yeni istifadəçi
+        </button>
+      </div>
+    </div>
+    <new-user
+      :activateTab="newUserTabActive"
+      @closeTab="newUserTabActive = false"
+    ></new-user>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import NewUser from "../components/NewUser.vue";
+import Limits from "./Limits.vue";
+import Users from "./Users.vue";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld,
+    NewUser,
+    limits: Limits,
+    users: Users,
   },
+  data() {
+    return {
+      selectedComponent: "users",
+      newUserTabActive: false,
+    };
+  },
+  methods: {},
 };
 </script>

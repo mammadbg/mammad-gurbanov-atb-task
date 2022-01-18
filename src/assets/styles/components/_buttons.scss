@@ -1,0 +1,132 @@
+button[class^="button"] {
+  font: 400 16px Fira;
+  cursor: pointer;
+  min-width: 140px;
+}
+.button {
+  &__yellow {
+    &--outline {
+      padding: 10px 46px 9px 46px;
+      border-radius: 10px;
+      border: 1px solid $yellow-dark;
+      color: $yellow-dark;
+      background: #fff;
+      &--active,
+      &:hover,
+      &:active,
+      &:visited {
+        background: $yellow-dark;
+        border: 1px solid $yellow-dark;
+        color: #fff;
+      }
+    }
+    &--filled {
+      padding: 10px 46px 9px 46px;
+      border-radius: 10px;
+      border: 1px solid $yellow-dark;
+      color: $yellow-dark;
+      background: $yellow-dark;
+      color: #000;
+      text-align: center;
+      width: 100%;
+      font: 500 18px Fira !important;
+      &:hover,
+      &:active,
+      &:visited {
+        background: #fff;
+        border: 1px solid $yellow-dark;
+        color: $yellow-dark;
+      }
+      &:disabled,
+      button[disabled] {
+        border: 1px solid #dddddd;
+        background-color: #e4e4e4;
+        color: #ccc;
+        cursor: not-allowed;
+      }
+    }
+  }
+  &__purple {
+    &--filled {
+      padding: 3px 23px 3px 16px;
+      border-radius: 10px;
+      border: 1px solid $purple-dark;
+      color: $purple-dark;
+      background: $purple-dark;
+      color: #fff;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      i {
+        font-size: 30px;
+        font-family: serif;
+        color: #fff;
+        margin-right: 22px;
+        margin-bottom: 2px;
+      }
+      &:hover,
+      &:active,
+      &:visited {
+        border: 1px solid $purple-dark;
+        color: #fff;
+      }
+    }
+  }
+  &__red {
+    &--outline {
+      border: 1px solid $red-dark;
+      padding: 9px 16px;
+      color: $red-dark;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      background: #fff;
+      i {
+        color: $red-dark;
+        margin-right: 10px;
+        font-size: 20px;
+      }
+      &:hover,
+      &:active,
+      &:visited {
+        background: $red-dark;
+        border: 1px solid $red-dark;
+        color: #fff;
+        i {
+          &::before {
+            color: #fff !important;
+          }
+        }
+      }
+    }
+    &--filled {
+      border: 1px solid $red-dark;
+      padding: 9px 16px;
+      color: $red-dark;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      background: $red-dark;
+      i {
+        &::before {
+          color: #fff !important;
+        }
+        margin-right: 10px;
+        font-size: 20px;
+      }
+      &:hover,
+      &:active,
+      &:visited {
+        background: #fff;
+        border: 1px solid $red-dark;
+        color: $red-dark;
+        i {
+          &::before {
+            color: $red-dark !important;
+          }
+        }
+      }
+    }
+  }
+}

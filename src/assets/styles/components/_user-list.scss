@@ -1,0 +1,145 @@
+.list {
+  &__title {
+    background: $purple-light;
+    padding: 7px 0 7px 44px;
+    h4 {
+      font: 500 14px Fira;
+      text-transform: uppercase;
+      color: $purple-dark;
+      margin: 0;
+    }
+  }
+  &__item {
+    padding: 20px 45px 20px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $purple-light;
+    &--user {
+      display: flex;
+      align-items: center;
+      .icon {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $purple-light-border;
+        border-radius: 5px;
+        margin-right: 20px;
+        i {
+          font-size: 23px;
+        }
+      }
+      .name {
+        font: 400 17px "Fira";
+        color: $title-primary;
+      }
+    }
+    &--features {
+      width: 100%;
+      padding: 29px 0px 39px 40px;
+      display: none;
+      transition: .2s ease-in-out;
+      .details {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        text-transform: uppercase;
+        font: 500 16px Fira;
+        color: $purple-dark;
+        .container {
+          display: block;
+          position: relative;
+          padding-left: 35px;
+          cursor: pointer;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          margin-right: 30px;
+          width: 123px;
+        }
+        .container input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+        }
+        .checkmark {
+          position: absolute;
+          top: -1px;
+          left: 0;
+          height: 16px;
+          width: 16px;
+          background-color: #fff;
+          border-radius: 3px;
+          border: 2px solid $purple-dark;
+        }
+        .container:hover input ~ .checkmark {
+          background-color: $purple-light;
+        }
+        .container input:checked ~ .checkmark {
+          background-color: $purple-dark;
+        }
+        .checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+        }
+        .container input:checked ~ .checkmark:after {
+          display: block;
+        }
+        .container .checkmark:after {
+          left: 5px;
+          top: 1px;
+          width: 5px;
+          height: 10px;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+      }
+    }
+    &--block{
+      display: none;
+      transition: .2s ease-in-out;
+    }
+  }
+}
+
+.list-details-active {
+  margin-bottom: 130px;
+  .list__item--features {
+    top: 50%;
+  }
+}
+
+.show-details{
+  display: block;
+  transition: .2s ease-in-out;
+}
+
+.user-blocked{
+  position: relative;
+  // filter: grayscale(100%);
+  &::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+  }
+  label{
+    color: #ccc;
+  }
+  .checkmark{
+    border: 1px solid #ccc !important;
+    background: #ccc !important;
+  }
+}
